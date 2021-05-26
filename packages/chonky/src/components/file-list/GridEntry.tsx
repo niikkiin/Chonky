@@ -22,24 +22,30 @@ export const GridEntry: React.FC<FileEntryProps> = React.memo(
             [classes.gridFileEntry]: true,
         });
         return (
-            <div className={entryClassName} {...fileEntryHtmlProps}>
-                {isDirectory ? (
-                    <GridEntryPreviewFolder
-                        className={classes.gridFileEntryPreview}
-                        entryState={entryState}
-                        dndState={dndState}
-                    />
-                ) : (
-                    <GridEntryPreviewFile
-                        className={classes.gridFileEntryPreview}
-                        entryState={entryState}
-                        dndState={dndState}
-                    />
-                )}
-                <div className={classes.gridFileEntryNameContainer}>
-                    <FileEntryName className={classes.gridFileEntryName} file={file} />
+            <>
+                <div className={entryClassName} {...fileEntryHtmlProps}>
+                    {isDirectory ? (
+                        <GridEntryPreviewFolder
+                            className={classes.gridFileEntryPreview}
+                            entryState={entryState}
+                            dndState={dndState}
+                        />
+                    ) : (
+                        <GridEntryPreviewFile
+                            className={classes.gridFileEntryPreview}
+                            entryState={entryState}
+                            dndState={dndState}
+                        />
+                    )}
+                    <div className={classes.gridFileEntryNameContainer}>
+                        <FileEntryName
+                            className={classes.gridFileEntryName}
+                            file={file}
+                        />
+                    </div>
                 </div>
-            </div>
+                <div className="">test code</div>
+            </>
         );
     }
 );
